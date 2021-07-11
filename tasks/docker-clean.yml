@@ -1,0 +1,23 @@
+- name: Remove unused containers weekly
+  cron:
+    name: "Remove old containers weekly"
+    minute: "0"
+    hour: "22"
+    weekday: "0"
+    job: "docker rm $(docker ps -qa --no-trunc --filter \"status=exited\")"
+
+- name: Remove unused images weekly
+  cron:
+    name: "Remove old images weekly"
+    minute: "0"
+    hour: "23"
+    weekday: "0"
+    job: "docker rmi $(docker images -q)"
+
+- name: Remove unused volumes weekly
+  cron:
+    name: "Clean unused volumes weekly"
+    minute: "0"
+    hour: "21"
+    weekday: "0"
+    job: "docker system prune --volumes -f >> /var/log/docker_cronjob.log"

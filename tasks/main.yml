@@ -1,0 +1,9 @@
+- name: Import docker task in play
+  import_tasks: './docker.yml'
+  tags:
+    - docker
+
+- name: Import docker clean task in play
+  import_tasks: './docker-clean.yml'
+  tags:
+    - docker

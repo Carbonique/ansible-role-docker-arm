@@ -1,0 +1,8 @@
+# Credits go to Jeff Geerling https://github.com/geerlingguy/ansible-role-docker_arm
+
+galaxy_info:
+  role_name: docker
+  author: carbonique
+  description: Role for installing Docker
+  license: "license (MIT)"
+  min_ansible_version: 2.10
