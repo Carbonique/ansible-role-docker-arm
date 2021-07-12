@@ -45,15 +45,6 @@
   tags:
     - docker_network
 
-- name: "Create Docker basedir encrypted {{ docker_encrypted_basedir }}"
-  file:
-    path: "{{ docker_encrypted_basedir }}"
-    state: directory
-    mode: 0755
-    owner: "{{ new_user_PUID | default('0') }}"
-    group: "{{ new_user_PGID | default('0') }}"
-  when: docker_encrypted_basedir is defined
-
 - name: "Create Docker basedir unencrypted {{ docker_non_encrypted_basedir }}"
   file:
     path: "{{ docker_encrypted_basedir }}"
