@@ -24,7 +24,6 @@
     name: "docker-ce={{ docker_version }}*"
     state: present
     force: true
-    install_recommends: "{{ docker_install_recommends }}"
 
 - name: Ensure Docker is started.
   service:
