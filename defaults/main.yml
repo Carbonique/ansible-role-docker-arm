@@ -4,3 +4,4 @@ docker_version_arm64: 5:19.03.9
 docker_version: "{{ docker_version_armv7 if 'armv7' in ansible_architecture else docker_version_armv6 if 'armv6' in ansible_architecture else docker_version_arm64 }}"
 docker_install_compose: true
 docker_pip_executable: pip3
+docker_network: network
