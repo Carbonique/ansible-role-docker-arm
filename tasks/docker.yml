@@ -46,7 +46,7 @@
 
 - name: "Create Docker basedir unencrypted {{ docker_non_encrypted_basedir }}"
   file:
-    path: "{{ docker_encrypted_basedir }}"
+    path: "{{ docker_non_encrypted_basedir }}"
     state: directory
     mode: 0755
     owner: "{{ new_user_PUID | default('0') }}"
